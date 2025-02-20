@@ -25,10 +25,10 @@ public class TestEmployee {
         public void verifierMotDePasseValide() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(true, employee.checkPassword("Azerty12"));
+                    Assertions.assertEquals(true, employee.CheckPassword("Azerty12"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, employee.checkPassword("A1B2C3D4E5f"));
+                    Assertions.assertEquals(true, employee.CheckPassword("A1B2C3D4E5f"));
                 }
             );
         }
@@ -36,19 +36,19 @@ public class TestEmployee {
         @Test
         @DisplayName("Mot de passe vide")
         public void verifierMotDePasseVide() {
-            Assertions.assertEquals(false, employee.checkPassword(""));
+            Assertions.assertEquals(false, employee.CheckPassword("")); 
         }
 
         @Test
         @DisplayName("Mot de passe sans chiffre")
         public void verifierMotDePasseTropCourt() {
-            Assertions.assertEquals(false, employee.checkPassword("azerty"));
+            Assertions.assertEquals(false, employee.CheckPassword("azerty"));
         }
 
         @Test
         @DisplayName("Mot de passe sans majuscule")
         public void verifierMotDePasseSansMajuscule() {
-            Assertions.assertEquals(false, employee.checkPassword("aaaaaaaaaa"));
+            Assertions.assertEquals(false, employee.CheckPassword("aaaaaaaaaa"));
         }
 
         @Test
@@ -56,10 +56,10 @@ public class TestEmployee {
         public void verifierMotDePasseSansMinuscule() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(false, employee.checkPassword("A1111111"));
+                    Assertions.assertEquals(false, employee.CheckPassword("A1111111"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, employee.checkPassword("A1B2C3D4E5"));
+                    Assertions.assertEquals(false, employee.CheckPassword("A1B2C3D4E5"));
                 }
             );
         }
@@ -73,25 +73,25 @@ public class TestEmployee {
         @ValueSource(strings = {"Lambrecq", "lambrecq", "_Lambrecq", "LaMbReCq", "Lambrecq1234"})
         @DisplayName("Nom d'utilisateur valide")
         public void verifierNomDUtilisateurValide(String userName) {
-            Assertions.assertEquals(true, employee.checkUserName(userName));
+            Assertions.assertEquals(true, employee.CheckNomDUtilisateur(userName));
         }
 
         @Test
         @DisplayName("Nom d'utilisateur vide")
         public void verifierNomDUtilisateurVide() {
-            Assertions.assertEquals(false, employee.checkUserName(""));
+            Assertions.assertEquals(false, employee.CheckNomDUtilisateur(""));
         }
 
         @Test
         @DisplayName("Nom d'utilisateur commençant par un chiffre")
         public void verifierNomDUtilisateurCommencantParUnChiffre() {
-            Assertions.assertEquals(false, employee.checkUserName("1234Lambrecq"));
+            Assertions.assertEquals(false, employee.CheckNomDUtilisateur("1234Lambrecq"));
         }
 
         @Test
         @DisplayName("Nom d'utilisateur sans lettre")
         public void verifierNomDUtilisateurSansLettre() {
-            Assertions.assertEquals(false, employee.checkUserName("123123123123"));
+            Assertions.assertEquals(false, employee.CheckNomDUtilisateur("123123123123"));
         }
     }
 
@@ -104,13 +104,13 @@ public class TestEmployee {
         public void verifierPosteAvecChiffres() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(false, employee.checkRole("123employé"));
+                    Assertions.assertEquals(false, employee.CheckPoste("123employé"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, employee.checkRole("123312"));
+                    Assertions.assertEquals(false, employee.CheckPoste("123312"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, employee.checkRole("Lambrecq1234"));
+                    Assertions.assertEquals(false, employee.CheckPoste("Lambrecq1234"));
                 }
             );
         }
@@ -118,29 +118,29 @@ public class TestEmployee {
         @Test
         @DisplayName("Poste vide")
         public void verifierPosteVide() {
-            Assertions.assertEquals(false, employee.checkRole(""));
+            Assertions.assertEquals(false, employee.CheckPoste(""));
         }
 
         @Test
         @DisplayName("Poste contenant des majuscules")
         public void verifierPosteContenantDesMajuscules() {
-            Assertions.assertEquals(true, employee.checkRole("MaNaGeur"));
+            Assertions.assertEquals(true, employee.CheckPoste("MaNaGeur"));
         }
 
         @Test
         @DisplayName("Poste contenant un underscore")
         public void verifierPosteContenantUnUnderscore() {
-            Assertions.assertEquals(true, employee.checkRole("Mana_geur"));
+            Assertions.assertEquals(true, employee.CheckPoste("Mana_geur"));
         }
 
         @Test@DisplayName("Poste classique")
         public void verifierPosteClassique() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(true, employee.checkRole("Employée"));
+                    Assertions.assertEquals(true, employee.CheckPoste("Employée"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, employee.checkRole("Manager"));
+                    Assertions.assertEquals(true, employee.CheckPoste("Manager"));
                 }
             );
         }

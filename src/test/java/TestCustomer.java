@@ -23,10 +23,10 @@ public class TestCustomer {
         public void verifierEmailSimple() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(true, customer.emailValidation("test@test.com"));             
+                    Assertions.assertEquals(true, customer.verifierEmail("test@test.com"));             
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.emailValidation("TEST@TEST.com"));
+                    Assertions.assertEquals(true, customer.verifierEmail("TEST@TEST.com"));
                 }
             );
         }
@@ -34,13 +34,13 @@ public class TestCustomer {
         @Test
         @DisplayName("Adresse mail avec des chiffres")
         public void verifierEmailAvecChiffres() {
-            Assertions.assertEquals(true, customer.emailValidation("1234@5678.com"));
+            Assertions.assertEquals(true, customer.verifierEmail("1234@5678.com"));
         }
 
         @Test
         @DisplayName("Adresse mail vide")
         public void verifierEmailVide() {
-            Assertions.assertEquals(false, customer.emailValidation(""));
+            Assertions.assertEquals(false, customer.verifierEmail(""));
         }
 
         @Test
@@ -48,16 +48,16 @@ public class TestCustomer {
         public void verifierEmailIncorrect() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(false, customer.emailValidation("TEST"));
+                    Assertions.assertEquals(false, customer.verifierEmail("TEST"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.emailValidation("test@test"));
+                    Assertions.assertEquals(false, customer.verifierEmail("test@test"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.emailValidation("test@test."));
+                    Assertions.assertEquals(false, customer.verifierEmail("test@test."));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.emailValidation("test.com"));
+                    Assertions.assertEquals(false, customer.verifierEmail("test.com"));
                 }
             );
         }
@@ -72,16 +72,16 @@ public class TestCustomer {
         public void verifierTelephoneFormatCorrect() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(true, customer.phoneValidation("+32470123456"));
+                    Assertions.assertEquals(true, customer.verifierTelephone("+32470123456"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.phoneValidation("0470123456"));
+                    Assertions.assertEquals(true, customer.verifierTelephone("0470123456"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.phoneValidation("0032470123456"));
+                    Assertions.assertEquals(true, customer.verifierTelephone("0032470123456"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.phoneValidation("0470/12.34.56"));
+                    Assertions.assertEquals(true, customer.verifierTelephone("0470/12.34.56"));
                 }
             );
         }
@@ -89,7 +89,7 @@ public class TestCustomer {
         @Test
         @DisplayName("Numero de téléphone vide")
         public void verifierTelephoneVide() {
-            Assertions.assertEquals(false, customer.phoneValidation(""));
+            Assertions.assertEquals(false, customer.verifierTelephone(""));
         }
 
         @Test
@@ -97,19 +97,19 @@ public class TestCustomer {
         public void verifierTelephoneIncorrect() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(false, customer.phoneValidation("0"));
+                    Assertions.assertEquals(false, customer.verifierTelephone("0"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.phoneValidation("AZE"));
+                    Assertions.assertEquals(false, customer.verifierTelephone("AZE"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.phoneValidation("+3247012345AB"));
+                    Assertions.assertEquals(false, customer.verifierTelephone("+3247012345AB"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.phoneValidation("+3247012345"));
+                    Assertions.assertEquals(false, customer.verifierTelephone("+3247012345"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.phoneValidation("=32470123456"));
+                    Assertions.assertEquals(false, customer.verifierTelephone("=32470123456"));
                 }
             );
         }
@@ -124,13 +124,13 @@ public class TestCustomer {
         public void verifierNomCorrect() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(true, customer.nameValidation("Lambrecq"));
+                    Assertions.assertEquals(true, customer.verifierNom("Lambrecq"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.nameValidation("lambrecq"));
+                    Assertions.assertEquals(true, customer.verifierNom("lambrecq"));
                 },
                 () -> {
-                    Assertions.assertEquals(true, customer.nameValidation("LaMbReCq"));
+                    Assertions.assertEquals(true, customer.verifierNom("LaMbReCq"));
                 }
             );
         }
@@ -138,7 +138,7 @@ public class TestCustomer {
         @Test
         @DisplayName("Nom vide")
         public void verifierNomVide() {
-            Assertions.assertEquals(false, customer.nameValidation(""));
+            Assertions.assertEquals(false, customer.verifierNom(""));
         }
 
         @Test
@@ -146,10 +146,10 @@ public class TestCustomer {
         public void verifierNomAvecChiffres() {
             Assertions.assertAll(
                 () -> {
-                    Assertions.assertEquals(false, customer.nameValidation("Lambrecq1234"));
+                    Assertions.assertEquals(false, customer.verifierNom("Lambrecq1234"));
                 },
                 () -> {
-                    Assertions.assertEquals(false, customer.nameValidation("1234Lambrecq"));
+                    Assertions.assertEquals(false, customer.verifierNom("1234Lambrecq"));
                 }
             );
         }
@@ -157,7 +157,7 @@ public class TestCustomer {
         @Test
         @DisplayName("Nom au format incorrect")
         public void verifierNomIncorrect() {
-            Assertions.assertEquals(false, customer.nameValidation("_Lambrecq@"));
+            Assertions.assertEquals(false, customer.verifierNom("_Lambrecq@"));
         }
     }
 } 

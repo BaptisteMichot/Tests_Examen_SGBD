@@ -29,39 +29,17 @@ public class Employee {
 
     // Methods
 
-    /**
-     * Check if the selected role is valid
-     * Case insensitive and accepts underscores
-     * No numbers allowed
-     * @param roleToCheck Role to check
-     * @return true if valid, otherwise false
-     */
-    public boolean checkRole(String roleToCheck) {
+    public boolean CheckPoste(String roleToCheck) {
         return roleToCheck != null && !roleToCheck.isBlank() && 
                Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ_]+$", roleToCheck);
     }
 
-    /**
-     * Check if a password meets minimal complexity requirements:
-     * - At least 8 characters
-     * - At least one lowercase letter, one uppercase letter, and one number
-     * @param pwdToCheck Password to check
-     * @return true if valid, otherwise false
-     */
-    public boolean checkPassword(String pwdToCheck) {
+    public boolean CheckPassword(String pwdToCheck) {
         return pwdToCheck != null && !pwdToCheck.isBlank() && 
                Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$", pwdToCheck);
     }
 
-    /**
-     * Check if a username is valid
-     * - May contain or begin with an underscore
-     * - Cannot begin with a number
-     * - Must contain at least one character
-     * @param userName Username to check
-     * @return true if valid, otherwise false
-     */
-    public boolean checkUserName(String userName) {
+    public boolean CheckNomDUtilisateur(String userName) {
         return userName != null && !userName.isBlank() && 
                Pattern.matches("^[a-z_][a-z0-9_]*$", userName);
     }

@@ -25,23 +25,18 @@ public class Customer {
 
 
     // Methods
-    public boolean emailValidation(String mailToCheck) {
+    public boolean verifierEmail(String mailToCheck) {
         return mailToCheck != null && !mailToCheck.isBlank() && 
                Pattern.matches("^[a-z0-9._%+-]{1,64}@[a-z0-9-]{1,63}\\.[a-z]{2,10}$", mailToCheck);
     }
 
-    public boolean phoneValidation(String phoneNumber) {
+    public boolean verifierTelephone(String phoneNumber) {
         return phoneNumber != null && !phoneNumber.isBlank() && 
                Pattern.matches("^(?:\\+32|0032|0)4\\d{2}[\\s./]?\\d{2}[\\s./]?\\d{2}[\\s./]?\\d{2}$", phoneNumber);
     }
 
-    public boolean nameValidation(String name) {
+    public boolean verifierNom(String name) {
         return name != null && !name.isBlank() && 
                Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ]+)*$", name);
-    }
-
-    public boolean surnameValidation(String surname) {
-        return surname != null && !surname.isBlank() && 
-               Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ]+)*$", surname);
     }
 }
