@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: TestEmployee$checkPoste
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in TestEmployee$checkPoste
+TestEmployee$checkPoste.verifierPosteClassique -- Time elapsed: 0.002 s
+TestEmployee$checkPoste.verifierPosteAvecChiffres -- Time elapsed: 0.001 s
+TestEmployee$checkPoste.verifierPosteContenantDesMajuscules -- Time elapsed: 0.001 s
+TestEmployee$checkPoste.verifierPosteContenantUnUnderscore -- Time elapsed: 0 s
+TestEmployee$checkPoste.verifierPosteVide -- Time elapsed: 0.001 s

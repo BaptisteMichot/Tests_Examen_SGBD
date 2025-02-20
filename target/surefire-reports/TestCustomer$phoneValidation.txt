@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: TestCustomer$phoneValidation
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in TestCustomer$phoneValidation
-TestCustomer$phoneValidation.verifierTelephoneFormatCorrect -- Time elapsed: 0.004 s
-TestCustomer$phoneValidation.verifierTelephoneIncorrect -- Time elapsed: 0.004 s
-TestCustomer$phoneValidation.verifierTelephoneVide -- Time elapsed: 0.002 s
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in TestCustomer$phoneValidation
+TestCustomer$phoneValidation.verifierTelephoneFormatCorrect -- Time elapsed: 0 s
+TestCustomer$phoneValidation.verifierTelephoneIncorrect -- Time elapsed: 0.005 s
+TestCustomer$phoneValidation.verifierTelephoneVide -- Time elapsed: 0.001 s

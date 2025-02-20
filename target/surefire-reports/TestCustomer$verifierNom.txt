@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestCustomer$verifierNom
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in TestCustomer$verifierNom
-TestCustomer$verifierNom.verifierNomIncorrect -- Time elapsed: 0.001 s
-TestCustomer$verifierNom.verifierNomVide -- Time elapsed: 0.001 s
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in TestCustomer$verifierNom
+TestCustomer$verifierNom.verifierNomIncorrect -- Time elapsed: 0.003 s
+TestCustomer$verifierNom.verifierNomVide -- Time elapsed: 0.002 s
 TestCustomer$verifierNom.verifierNomAvecChiffres -- Time elapsed: 0.002 s
-TestCustomer$verifierNom.verifierNomCorrect -- Time elapsed: 0.001 s
+TestCustomer$verifierNom.verifierNomCorrect -- Time elapsed: 0.004 s

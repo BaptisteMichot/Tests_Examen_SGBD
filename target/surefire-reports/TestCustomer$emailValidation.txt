@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestCustomer$emailValidation
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.102 s <<< FAILURE! -- in TestCustomer$emailValidation
-TestCustomer$emailValidation.verifierEmailVide -- Time elapsed: 0.048 s
-TestCustomer$emailValidation.verifierEmailIncorrect -- Time elapsed: 0.008 s
-TestCustomer$emailValidation.verifierEmailSimple -- Time elapsed: 0.014 s <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.123 s <<< FAILURE! -- in TestCustomer$emailValidation
+TestCustomer$emailValidation.verifierEmailVide -- Time elapsed: 0.061 s
+TestCustomer$emailValidation.verifierEmailIncorrect -- Time elapsed: 0.007 s
+TestCustomer$emailValidation.verifierEmailSimple -- Time elapsed: 0.018 s <<< FAILURE!
 org.opentest4j.MultipleFailuresError: 
 Multiple Failures (1 failure)
 	org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
@@ -36,4 +36,4 @@ Multiple Failures (1 failure)
 		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
 		... 8 more
 
-TestCustomer$emailValidation.verifierEmailAvecChiffres -- Time elapsed: 0.001 s
+TestCustomer$emailValidation.verifierEmailAvecChiffres -- Time elapsed: 0.003 s
