@@ -25,22 +25,22 @@ public class Customer {
 
 
     // Methods
-    public static boolean emailValidation(String mailToCheck) {
+    public boolean emailValidation(String mailToCheck) {
         return mailToCheck != null && !mailToCheck.isBlank() && 
                Pattern.matches("^[a-z0-9._%+-]{1,64}@[a-z0-9-]{1,63}\\.[a-z]{2,10}$", mailToCheck);
     }
 
-    public static boolean phoneValidation(String phoneNumber) {
+    public boolean phoneValidation(String phoneNumber) {
         return phoneNumber != null && !phoneNumber.isBlank() && 
                Pattern.matches("^(?:\\+32|0032|0)4\\d{2}[\\s./]?\\d{2}[\\s./]?\\d{2}[\\s./]?\\d{2}$", phoneNumber);
     }
 
-    public static boolean nameValidation(String name) {
+    public boolean nameValidation(String name) {
         return name != null && !name.isBlank() && 
                Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ]+)*$", name);
     }
 
-    public static boolean surnameValidation(String surname) {
+    public boolean surnameValidation(String surname) {
         return surname != null && !surname.isBlank() && 
                Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ]+)*$", surname);
     }

@@ -26,7 +26,7 @@ public class Employee {
     public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
     public void setSalt(String salt) { this.salt = salt; }
 
-    
+
     // Methods
 
     /**
@@ -36,7 +36,7 @@ public class Employee {
      * @param roleToCheck Role to check
      * @return true if valid, otherwise false
      */
-    public static boolean checkRole(String roleToCheck) {
+    public boolean checkRole(String roleToCheck) {
         return roleToCheck != null && !roleToCheck.isBlank() && 
                Pattern.matches("^[A-Za-zÀ-ÖØ-öø-ÿ_]+$", roleToCheck);
     }
@@ -48,7 +48,7 @@ public class Employee {
      * @param pwdToCheck Password to check
      * @return true if valid, otherwise false
      */
-    public static boolean checkPassword(String pwdToCheck) {
+    public boolean checkPassword(String pwdToCheck) {
         return pwdToCheck != null && !pwdToCheck.isBlank() && 
                Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$", pwdToCheck);
     }
@@ -61,7 +61,7 @@ public class Employee {
      * @param userName Username to check
      * @return true if valid, otherwise false
      */
-    public static boolean checkUserName(String userName) {
+    public boolean checkUserName(String userName) {
         return userName != null && !userName.isBlank() && 
                Pattern.matches("^[a-z_][a-z0-9_]*$", userName);
     }
